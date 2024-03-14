@@ -30,3 +30,4 @@ Suporte ao cliente
 ![Site da loja](/Imagens/Sitedaloja.jpg)
 ![diagrama](/Imagens/MER.PNG)
 ![Pagina inicial](/Imagens/tela_inicial1.PNG)
+![suporte](/Imagens/Site_da_loja_3.jpg)
