@@ -31,3 +31,4 @@ Suporte ao cliente
 ![diagrama](/Imagens/MER.PNG)
 ![Pagina inicial](/Imagens/tela_inicial1.PNG)
 ![suporte](/Imagens/Site_da_loja_3.jpg)
+![Tela de pagamento](/Imagens/Teladepagamento)
