@@ -27,8 +27,8 @@ Suporte ao cliente
 -email
 -rede social
 
-![Site da loja](/Imagens/Sitedaloja.jpg)
 ![diagrama](/Imagens/MER.PNG)
+![Site da loja](/Imagens/Sitedaloja.jpg)
 ![Pagina inicial](/Imagens/tela_inicial1.PNG)
 ![suporte](/Imagens/Site_da_loja_3.jpg)
 ![Tela de pagamento](/Imagens/Teladepagamento.png)
