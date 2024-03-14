@@ -26,3 +26,5 @@ Suporte ao cliente
 -contato
 -email
 -rede social
+
+![Site da loja](/Imagens/Sitedaloja.jpg)
