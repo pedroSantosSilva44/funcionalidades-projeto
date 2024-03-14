@@ -28,3 +28,4 @@ Suporte ao cliente
 -rede social
 
 ![Site da loja](/Imagens/Sitedaloja.jpg)
+![diagrama](/Imagens/MER.PNG)
