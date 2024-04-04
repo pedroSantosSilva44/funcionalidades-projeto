@@ -22,7 +22,7 @@ public class CreateCarServlet extends HttpServlet {
 
         carDao.createCar(new Car(carName));
 
-        request.getRequestDispatcher("index.html").forward(request, response);
+        response.sendRedirect("/find-all-cars");
 
     }
 
