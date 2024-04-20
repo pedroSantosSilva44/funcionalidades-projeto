@@ -1,6 +1,6 @@
 package br.com.carstore.dao;
 
-import br.com.carstore.model.Car;
+import br.com.carstore.model.Roupa;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CarDAO {
+public class RoupaDAO {
 
-    public void createCar(Car car) {
+    public void createCar(Roupa car) {
 
         try {
 
@@ -38,7 +38,7 @@ public class CarDAO {
 
     }
 
-    public List<Car> findAllCars() {
+    public List<Roupa> findAllCars() {
 
         try {
 
@@ -50,14 +50,14 @@ public class CarDAO {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            List<Car> cars = new ArrayList<>();
+            List<Roupa> cars = new ArrayList<>();
 
             while (resultSet.next()) {
 
                 String carId = resultSet.getString("id");
                 String name = resultSet.getString("name");
 
-                Car car = new Car(carId, name);
+                Roupa car = new Roupa(carId, name);
 
                 cars.add(car);
 

@@ -1,6 +1,7 @@
 package br.com.carstore.servlet;
 
-import br.com.carstore.dao.CarDAO;
+import br.com.carstore.dao.RoupaDAO;
+import br.com.carstore.model.Roupa;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,17 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/delete-car")
-public class DeleteCarServlet extends HttpServlet {
+@WebServlet("/create-car")
+public class CreateRoupaServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String carId = req.getParameter("id");
+        String carName = req.getParameter("carName");
 
-        CarDAO carDAO = new CarDAO();
+        RoupaDAO carDAO = new RoupaDAO();
 
-        carDAO.deleteCarById(carId);
+        Roupa car = new Roupa(carName);
+
+        carDAO.createCar(car);
 
         resp.sendRedirect("/find-all-cars");
 

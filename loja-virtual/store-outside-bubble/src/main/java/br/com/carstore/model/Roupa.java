@@ -1,16 +1,16 @@
 package br.com.carstore.model;
 
-public class Car {
+public class Roupa {
 
 
     private String id;
     private String name;
 
-    public Car(String name) {
+    public Roupa(String name) {
         this.name = name;
     }
 
-    public Car(String id, String name) {
+    public Roupa(String id, String name) {
         this.id = id;
         this.name = name;
     }

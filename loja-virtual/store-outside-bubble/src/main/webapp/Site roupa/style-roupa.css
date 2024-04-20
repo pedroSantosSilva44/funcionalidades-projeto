@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: var(var(--bg-color) #26292E);
+    --text-color: #fff;
+    --main-color: #511AE5;
+    --other-color: #d3d0c8;
+    --h1-font: 4rem;
+    --p-font: 1rem;
+}
+
+body {
+    background-color: #26292E;
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 8%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navegação {
+    display: flex;
+
+}
+
+.navegação a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 250;
+    margin: 0 45px;
+    transition: all .3s;
+}
+
+.navegação a:hover {
+    color: var(--main-color);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+
+.search:hover {
+    color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+
+.profile:hover {
+    color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+
+.cart:hover {
+    color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+.section {
+    padding: 0 15%;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-text h1 {
+    font-size: var(--h1-font);
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.home-text h5 {
+    color: var(--other-color);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.home-text h3 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.home-img img {
+    max-width: 100%;
+    width: 25rem;
+    height: 30rem;
+    margin-left: 25%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 70px;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+    border: solid 2px var(--text-color);
+    transition: all.55s ease;
+    color: #fff;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    border: 2px solid var(--text-color);
+    color: #000;
+
+}

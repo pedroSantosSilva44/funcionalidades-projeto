@@ -1,7 +1,7 @@
 package br.com.carstore.servlet;
 
-import br.com.carstore.dao.CarDAO;
-import br.com.carstore.model.Car;
+import br.com.carstore.dao.RoupaDAO;
+import br.com.carstore.model.Roupa;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,14 +12,14 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/find-all-cars")
-public class ListCarServlet extends HttpServlet {
+public class ListRoupaServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        CarDAO carDAO = new CarDAO();
+        RoupaDAO carDAO = new RoupaDAO();
 
-        List<Car> allCars = carDAO.findAllCars();
+        List<Roupa> allCars = carDAO.findAllCars();
 
         req.setAttribute("cars", allCars);
 
