@@ -1,16 +1,97 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outside Bobble</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <body>
-    <h2>Maven muito bom!</h2>
+    
+<header>
+    <div class="container">
+        <div class="left">
+            <h3>Área de pagamento</h3>
+            <form>
+                Nome completo:
+                <input type="text" nome = "" placeholder="Nome">
+                Email:
+                <input type="text" nome = "" placeholder="Email">
+                Endereço:
+                <input type="text" nome = "" placeholder="Endereço">
+                Cidade:
+                <input type="text" nome = "" placeholder="Cidade">
+                <div id="zip">
+                    <label>
+                    Estado:
+                    <select>
+                        <option>...</option>
+                        <option>Acre</option>
+                        <option>Alagaos</option>
+                        <option>Amapá</option>
+                        <option>Amazonas</option>
+                        <option>Bahia</option>
+                        <option>Ceará</option>
+                        <option>Espirito Santo</option>
+                        <option>Goiás</option>
+                        <option>Maranhão</option>
+                        <option>Mato Grosso</option>
+                        <option>Mato Grosso do Sul</option>
+                        <option>Minas gerais</option>
+                        <option>Pará</option>
+                        <option>Paraná</option>
+                        <option>Pernanbuco</option>
+                        <option>Piauí</option>
+                        <option>Rio Grande do Norte</option>
+                        <option>Rio Grande do Sul</option>
+                        <option>Rondônia</option>
+                        <option>Roraima</option>
+                        <option>Santa Catarina</option>
+                        <option>São Paulo</option>
+                        <option>Sergipe</option>
+                        <option>Tocantins</option>
+                    </select>
 
-    <form action="/create-car" method="post">
+                    </label>
+                    CEP:
+                    <input type="zip" name="" placeholder="Cep">
 
-        <label>Car Name:</label>
-        <input type="text" name="carName" id="carName">
+                </div>
 
-        <button type="submit">Create</button>
 
+            </form>
+
+        </div>
+    <div class = "right">
+    <h3>Pagamento</h3>
+    <form>
+        Cartões aceitos:
+        <br>
+        <img src="Visa.png" width="50">
+        <img src="mastercard.jpg" width="50">
+        <br><br>
+        Número do cartão de crédito:
+        <input type="text" nome = "" placeholder="Número do cartão">
+        Número de validade do cartão:
+        <input type="text" nome = "" placeholder="Número de validade">
+        <div id="zip">
+            
+        
+            CVV:
+            <input type="number" name="" placeholder="CVV">
+
+</div>
+<form>
+    <br>
+    Pix:
+    <img src="Pix.jpg" width="100">
+    <br><br>
+</form>
     </form>
+<input type="submit" name ="" value="Prossiga para o pagamento">
 
-
+</header>
 </body>
 </html>
