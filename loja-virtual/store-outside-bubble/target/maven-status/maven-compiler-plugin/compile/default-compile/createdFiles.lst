@@ -1,5 +1,0 @@
-br\com\carstore\servlet\DeleteRoupaServlet.class
-br\com\carstore\servlet\ListRoupaServlet.class
-br\com\carstore\model\Roupa.class
-br\com\carstore\servlet\CreateRoupaServlet.class
-br\com\carstore\dao\RoupaDAO.class
