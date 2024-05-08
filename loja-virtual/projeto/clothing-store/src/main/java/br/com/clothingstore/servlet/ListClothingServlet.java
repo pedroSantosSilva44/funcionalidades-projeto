@@ -1,8 +1,7 @@
 package br.com.clothingstore.servlet;
 
-
-import br.com.clothingstore.dao.RoupaDAO;
-import br.com.clothingstore.model.Roupa;
+import br.com.clothingstore.dao.ClothingDAO;
+import br.com.clothingstore.model.Clothing;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,19 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/find-all-cars")
-public class ListRoupaServlet extends HttpServlet {
+@WebServlet("/find-all-clothings")
+public class ListClothingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RoupaDAO carDAO = new RoupaDAO();
+        List<Clothing> clothings = new ClothingDAO().findAllClothings();
 
-
-        req.setAttribute("cars", allCars);
+        req.setAttribute("clothings", clothings);
 
         req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
 
     }
 
 }
+
