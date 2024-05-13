@@ -10,6 +10,7 @@
 
            <label>Nome da roupa</label>
          <input type="text" name="clothing-name" id="clothing-name">
+         <input type="hidden" id="id" name="id" value="${param.id}">
          <button type="submit">enviar</button>
 
 
