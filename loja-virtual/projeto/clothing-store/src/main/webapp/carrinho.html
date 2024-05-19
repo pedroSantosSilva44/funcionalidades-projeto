@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles-carrinho.css">
+</head>
+<body>
+
+    <header>
+      <a href="pagina-inicial.html">
+        <div class="logo">
+          <img src="image/logo outside.JPG" alt="">
+        </div>
+      </a>
+
+       <nav>
+
+        <nav>
+          <ul>
+            <li><a href="area do cliente.html">Novidade</a></li>
+            <li><a href="#">Masculino</a></li>
+            <li><a href="#">Feminino</a></li>
+            <li><a href="#">Acessórios</a></li>
+            <li><a href="#">Coleção Outside</a></li>
+          </ul>
+        </nav>
+        
+        <a href="carrinho.html">
+          <div class="carrinho">
+            <img src="image/carrin.png"> 
+         </div>
+</a>
+         <a href="area do cliente.html">
+         <div class="cliente">
+           <img src="image/user.png">
+         </div>
+             </a> 
+                
+      </header>
+
+    <div class="cart">
+        <h2>Carrinho de Compras</h2>
+        <ul class="cart-items">
+            <li class="item">
+                <img src="/image/camisa1.png">
+                <div class="item-details">
+                    <h3>Produto 1</h3>
+                    <p>Preço: R$ 50,00</p>
+                    <button class="remove-btn">Remover</button>
+                </div>
+            </li>
+            <li class="item">
+                <img src="/image/camisa2.png">
+                <div class="item-details">
+                    <h3>Produto 2</h3>
+                    <p>Preço: R$ 30,00</p>
+                    <button class="remove-btn">Remover</button>
+                </div>
+            </li>
+        </ul>
+        <div class="cart-total">
+            <h3>Total: R$ 80,00</h3>
+            <a href="pagamento.html">Finalizar Compra</a>
+        </div>
+      
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja Streetwear. Todos os direitos reservados.</p>
+      </footer>
+
+
+      <script>
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+            });
+        });
+    });
+
+  </script>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente</title>
+    <link rel="stylesheet" href="styles-cliente.css">
+</head>
+<body>
+
+    <header>
+      <a href="pagina-inicial.html">
+        <div class="logo">
+          <img src="image/logo outside.JPG" alt="">
+        </div>
+      </a>
+      
+        <nav>
+          <ul>
+            <li><a href="#">Novidade</a></li>
+            <li><a href="#">Masculino</a></li>
+            <li><a href="#">Feminino</a></li>
+            <li><a href="#">Acessórios</a></li>
+            <li><a href="#">Coleção Outside</a></li>
+          </ul>
+        </nav>
+    
+          <a href="carrinho.html">
+          <div class="carrinho">
+            <img src="image/carrin.png"> 
+         </div>
+         </a>
+
+         <a href="area do cliente.html">
+          <div class="cliente">
+            <img src="image/user.png">
+          </div>
+              </a>  
+         
+      </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="meus-pedidos.html">Meus Pedidos</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2>Meus Pedidos</h2>
+            <div class="order">
+                <p>Pedido #12345</p>
+                <ul>
+                    <li>Produto 1</li>
+                    <li>Produto 2</li>
+                    <li>Produto 3</li>
+                </ul>
+                <p>Total: R$ 150,00</p>
+            </div>
+            <div class="order">
+                <p>Pedido #67890</p>
+                <ul>
+                    <li>Produto 4</li>
+                    <li>Produto 5</li>
+                </ul>
+                <p>Total: R$ 100,00</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja Streetwear. Todos os direitos reservados.</p>
+      </footer>
+
+      <script>
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+            });
+        });
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.checkout-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover,
+.remove-btn:hover {
+    opacity: 0.8;
+}
+
+.logo img {
+    max-width: 200px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    margin-left: 2rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(31, 30, 30);
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+}
+
+.banner-img img {
+    width: 100%;
+    height: 450px;
+    margin-top: -550px;
+}
+
+nav ul {
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+    margin-left: 2rem;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 40px;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+.destaques {
+    width: 420px;
+    height: 420px;
+    margin-top: -10px;
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    position: static;
+    bottom: 0;
+    width: 99%;
+
+}
+
+footer p {
+    margin: 0;
+}
+
+.lupa {
+    margin-left: 7rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.carrinho {
+    margin-left: 2rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.cliente {
+    margin-left: 2rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.orders {
+    margin-top: 20px;
+}
+
+.order {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.order p {
+    margin: 5px 0;
+}
+
+.order a {
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.order a:hover {
+    background-color: #ddd;
+}

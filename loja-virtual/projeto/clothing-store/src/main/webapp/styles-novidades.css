@@ -1,0 +1,194 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .card {
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    font-weight: bold;
+    font-size: 25px;
+    border-style: groove;
+    border-width: 3px;
+    margin-left: 10px;
+    margin-bottom: 100px;
+    
+  
+  }
+  
+  .filtro {
+    height: 0px;
+    width: 10px;
+    max-width: 10px;
+    max-height: 20px;
+    margin-left: 20px;
+  
+  }
+  
+  .logo img {
+    max-width: 200px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    margin-left: 2rem;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(31, 30, 30);
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+  }
+  
+  .banner-img img {
+    width: 100%;
+    height: 450px;
+    
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+    margin-left: 2rem;
+  }
+  
+  header nav ul li {
+    display: inline;
+  }
+  
+  header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 10px;
+  }
+  
+  
+  footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+  
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  .lupa {
+    margin-left: 7rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .carrinho {
+    margin-left: 2rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  
+  .cadastro {
+    margin-left: 2rem;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .conteiner-principal{
+    background-color: #ffffff; 
+    gap: 55rem;
+    margin: auto;
+    
+  }
+
+    
+  .conteiner-camisa{
+    display: inline-block;
+    width: 250px;
+    background-color: #ffffff; 
+    gap: 55rem;
+    margin: auto;
+    
+  }
+
+  .img-size {
+    width: 250px;
+  }
+  
+  .descricao-camisa{
+    font:oblique;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex;
+    margin-left: 100px;
+  }
+  
+  .titulo-camisa{
+    margin: 0;
+  
+  }
+  
+  .conteiner-principal2{
+    background-color: #ffffff; 
+    gap: 55rem;
+    margin: auto;
+    
+  }
+
+    
+  .conteiner-calca{
+    display: inline-block;
+    width: 250px;
+    background-color: #ffffff; 
+    gap: 55rem;
+    margin: auto;
+    
+  }
+
+  .img-size {
+    width: 250px;
+  }
+  
+  .descricao-calca{
+    font:oblique;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex;
+    margin-left: 100px;
+  }
+  
+  .titulo-calca{
+    margin: 0;
+  }
+  
+  .section-filtro{
+    display: flex ;
+  }
+  
