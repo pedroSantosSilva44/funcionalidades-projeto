@@ -4,77 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta nmae="viewport" content="width-device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!-- or -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <link rel="stylesheet" href="pag_intheblock.css">
     <title>Minha Loja Streetwear</title>
 </head>
 
 <body>
+<header>
+    <a href="pagina-inicial.html">
+        <div class="logo">
+            <img src="image/logo outside.JPG" alt="">
+        </div>
+    </a>
 
-    <body>
-        <header>
-          <div class="logo">
-            <a href="index.html">
-              <img src="image/logo outside.JPG" alt="">
-            </a>  
-          </div>
-          <!-- <div>
-            <h1>OUTSIDE BUBBLE</h1>
-          </div> -->
-          <nav>
-            <ul>
-              <li><a href="index.html">Novidade</a></li>
-              <li><a href="masculino.html">Masculino</a></li>
-              <li><a href="feminino.html">Feminino</a></li>
-              <li><a href="acessorios.html">Acessórios</a></li>
-              <li><a href="colecao.html">Coleção Outside</a></li>
-            </ul>
-          </nav>
-      
-          <div class="lupa">
-            <img src="image/search.png">
-          </div>
-      
-          <div class="carrinho">
+    <nav>
+        <ul>
+            <li><a href="pagina-inicial.html">Home</a></li>
+            <li><a href="masculino.html">Masculino</a></li>
+            <li><a href="feminino.html">Feminino</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="colecao.html">Coleção Outside</a></li>
+        </ul>
+    </nav>
+
+    <a href="carrinho.html">
+        <div class="carrinho">
             <img src="image/carrin.png">
-          </div>
-      
-          <div class="cadastro">
+        </div>
+    </a>
+
+    <a href="area-do-cliente.html">
+        <div class="cliente">
             <img src="image/user.png">
-          </div>
-      
-        </header>
+        </div>
+    </a>
 
-    <section class ="home">
-        
-        <div class="home-img">
-            <img src="image/camisa 2.png" class="one">
-        
-        </div><!--home-img-->
+</header>
 
-        <div class="home-text">
+<section class="home">
 
-            <h1>CAMISA <br> "IN THE BLOCK"</h1>
-            <h3>R$150.00</h3>
-            <select>
-                <option>Tamanho:</option>
-                <option>P</option>
-                <option>M</option>
-                <option>G</option>
-                <option>GG</option>
-            </select> <br><br> <a href="#" class="btn">Compre Agora</a>
+    <div class="home-img">
+        <img src="image/camisa2.png" class="one">
+    </div><!--home-img-->
 
-        </div><!--home-text-->
+    <div class="home-text">
 
-    </section><!--home-->
+        <h1>CAMISA <br> "IN THE BLOCK"</h1>
+        <h3>R$150.00</h3>
+        <select id="tamanho">
+            <option value="">Tamanho:</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+        </select> <br><br>
+        <a href="#" class="btn" id="compreAgoraBtn">Compre Agora</a>
 
+    </div>
+
+</section>
+
+<script>
+    document.getElementById('compreAgoraBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const tamanho = document.getElementById('tamanho').value;
+        if (!tamanho) {
+            alert('Por favor, selecione um tamanho.');
+            return;
+        }
+
+        const produto = {
+            nome: 'CAMISA "IN THE BLOCK"',
+            preco: 150.00,
+            tamanho: tamanho,
+            quantidade: 1,
+            imagem: 'image/camisa2.png'
+        };
+
+        let carrinho = localStorage.getItem('carrinho');
+        carrinho = carrinho ? JSON.parse(carrinho) : [];
+
+        carrinho.push(produto);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        alert('Produto adicionado ao carrinho!');
+    });
+</script>
 
 </body>
 

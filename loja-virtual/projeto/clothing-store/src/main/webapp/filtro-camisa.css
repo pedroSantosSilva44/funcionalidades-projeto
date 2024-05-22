@@ -80,15 +80,7 @@ body {
   footer p {
     margin: 0;
   }
-  
-  .lupa {
-    margin-left: 7rem;
-    display: flex;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-  }
-  
+
   .carrinho {
     margin-left: 2rem;
     display: flex;
@@ -98,7 +90,7 @@ body {
   }
   
   
-  .cadastro {
+.cliente {
     margin-left: 2rem;
     display: flex;
     height: 20px;

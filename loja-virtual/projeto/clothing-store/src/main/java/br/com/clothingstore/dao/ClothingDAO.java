@@ -1,27 +1,27 @@
 package br.com.clothingstore.dao;
 
 import br.com.clothingstore.model.Clothing;
+import br.com.clothingstore.model.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static java.sql.DriverManager.getConnection;
+
 public class ClothingDAO {
 
     public void createClothing(Clothing clothing) {
-        String SQL = "INSERT INTO CLOTHING (NAME) VALUES (?)";
+        String SQL = "INSERT INTO CLOTHING (NAME, IMAGE) VALUES (?, ?)";
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = getConnection("jdbc:h2:~/test", "sa", "sa");
             System.out.println("Success: Database connection established");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, clothing.getName());
+            preparedStatement.setString(2, clothing.getImage());
             preparedStatement.execute();
 
             System.out.println("Success: Clothing inserted into database");
@@ -34,36 +34,29 @@ public class ClothingDAO {
     }
 
     public List<Clothing> findAllClothings() {
-        String SQL = "SELECT * FROM CLOTHING";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+        try {
+            String SQL = "SELECT * FROM CLOTHING";
+            Connection connection = getConnection("jdbc:h2:~/test", "sa", "sa");
              PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
+             ResultSet resultSet = preparedStatement.executeQuery();
             List<Clothing> clothingList = new ArrayList<>();
-
-
             while (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String name = resultSet.getString("name");
+                String image = resultSet.getString("image");
 
-                String clothingId = resultSet.getString("id");
-
-                String clothingName = resultSet.getString("name");
-
-                Clothing clothing = new Clothing(clothingId, clothingName);
-
-                clothingList.add(clothing);
+                Clothing roupas = new Clothing(id, name, image);
+                clothingList.add(roupas);
             }
-
             System.out.println("Success: Retrieved all clothing from the database");
 
             return clothingList;
+
         } catch (SQLException e) {
             System.out.println("Error: Failed to retrieve clothing from the database");
-            e.printStackTrace();
-            return Collections.emptyList();
         }
-
-
+        return Collections.emptyList();
     }
 
 
@@ -73,7 +66,7 @@ public class ClothingDAO {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = getConnection("jdbc:h2:~/test", "sa", "sa");
 
             System.out.println("success in database connection");
 
@@ -81,7 +74,7 @@ public class ClothingDAO {
             preparedStatement.setString(1, clothingId);
             preparedStatement.execute();
 
-            System.out.println("success on delete car with id: " + clothingId);
+            System.out.println("success on delete clothing with id: " + clothingId);
 
             connection.close();
 
@@ -92,5 +85,34 @@ public class ClothingDAO {
         }
 
     }
-}
 
+    public void updateClothing(Clothing updatedClothing) {
+
+        String sql = "UPDATE CLOTHING SET NAME = ?, IMAGE = ? WHERE ID = ?";
+
+        try {
+
+            Connection connection = getConnection("jdbc:h2:~/test", "sa","sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, updatedClothing.getName());
+            preparedStatement.setString(2, updatedClothing.getImage());
+            preparedStatement.setString(3, updatedClothing.getId());
+            preparedStatement.execute();
+
+            System.out.println("success in update clothing");
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
+
+        }
+    }
+
+}

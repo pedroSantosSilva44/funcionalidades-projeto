@@ -8,86 +8,98 @@
 </head>
 <body>
 
-    <header>
-      <a href="pagina-inicial.html">
+<header>
+    <a href="pagina-inicial.html">
         <div class="logo">
-          <img src="image/logo outside.JPG" alt="">
+            <img src="image/logo outside.JPG" alt="">
         </div>
-      </a>
+    </a>
 
-       <nav>
-
-        <nav>
-          <ul>
-            <li><a href="area do cliente.html">Novidade</a></li>
-            <li><a href="#">Masculino</a></li>
-            <li><a href="#">Feminino</a></li>
-            <li><a href="#">Acessórios</a></li>
-            <li><a href="#">Coleção Outside</a></li>
-          </ul>
-        </nav>
-        
-        <a href="carrinho.html">
-          <div class="carrinho">
-            <img src="image/carrin.png"> 
-         </div>
-</a>
-         <a href="area do cliente.html">
-         <div class="cliente">
-           <img src="image/user.png">
-         </div>
-             </a> 
-                
-      </header>
-
-    <div class="cart">
-        <h2>Carrinho de Compras</h2>
-        <ul class="cart-items">
-            <li class="item">
-                <img src="/image/camisa1.png">
-                <div class="item-details">
-                    <h3>Produto 1</h3>
-                    <p>Preço: R$ 50,00</p>
-                    <button class="remove-btn">Remover</button>
-                </div>
-            </li>
-            <li class="item">
-                <img src="/image/camisa2.png">
-                <div class="item-details">
-                    <h3>Produto 2</h3>
-                    <p>Preço: R$ 30,00</p>
-                    <button class="remove-btn">Remover</button>
-                </div>
-            </li>
+    <nav>
+        <ul>
+            <li><a href="pagina-inicial.html">Home</a></li>
+            <li><a href="masculino.html">Masculino</a></li>
+            <li><a href="feminino.html">Feminino</a></li>
+            <li><a href="acessorio.html">Acessórios</a></li>
+            <li><a href="colecao.html">Coleção Outside</a></li>
         </ul>
-        <div class="cart-total">
-            <h3>Total: R$ 80,00</h3>
-            <a href="pagamento.html">Finalizar Compra</a>
+    </nav>
+
+    <a href="carrinho.html">
+        <div class="carrinho">
+            <img src="image/carrin.png">
         </div>
-      
+    </a>
+
+    <a href="area-do-cliente.html">
+        <div class="cliente">
+            <img src="image/user.png">
+        </div>
+    </a>
+</header>
+
+<div class="cart">
+    <h2>Carrinho de Compras</h2>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-total">
+        <h3 id="total-amount">Total: R$ 0,00</h3>
+        <a href="pagamento.html">Finalizar Compra</a>
     </div>
+</div>
 
-    <footer>
-        <p>&copy; 2024 Minha Loja Streetwear. Todos os direitos reservados.</p>
-      </footer>
+<footer>
+    <p>&copy; 2024 Minha Loja Streetwear. Todos os direitos reservados.</p>
+</footer>
 
+<script>
+    function atualizarCarrinho() {
+        const carrinhoElement = document.getElementById('cart-items');
+        const totalAmountElement = document.getElementById('total-amount');
+        let carrinho = localStorage.getItem('carrinho');
+        carrinho = carrinho ? JSON.parse(carrinho) : [];
 
-      <script>
-        document.querySelectorAll('header nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        carrinhoElement.innerHTML = '';
+        let totalAmount = 0;
 
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
+        carrinho.forEach((item, index) => {
+            const itemElement = document.createElement('li');
+            itemElement.classList.add('item');
+            itemElement.innerHTML = `
+                <img src="${item.imagem}" alt="Imagem do produto">
+                <div class="item-details">
+                    <h3>${item.nome}</h3>
+                    <p>Tamanho: ${item.tamanho}</p>
+                    <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+                    <button class="remove-btn" data-index="${index}">Remover</button>
+                </div>
+            `;
+            carrinhoElement.appendChild(itemElement);
+            totalAmount += item.preco;
+        });
 
-    window.scrollTo({
-      top: targetElement.offsetTop,
-      behavior: 'smooth'
+        totalAmountElement.textContent = `Total: R$ ${totalAmount.toFixed(2)}`;
+
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                removerItemDoCarrinho(index);
             });
         });
-    });
+    }
 
-  </script>
-    
+    function removerItemDoCarrinho(index) {
+        let carrinho = localStorage.getItem('carrinho');
+        carrinho = carrinho ? JSON.parse(carrinho) : [];
+
+        carrinho.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        atualizarCarrinho();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        atualizarCarrinho();
+    });
+</script>
+
 </body>
 </html>

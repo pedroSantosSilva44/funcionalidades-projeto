@@ -6,97 +6,79 @@
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta nmae="viewport" content="width-device-width, initial-scale-1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <!-- or -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
     rel="stylesheet">
   <title>Minha Loja Streetwear</title>
-  <link rel="stylesheet" href="styles-filtro-camisa.css">
+  <link rel="stylesheet" href="filtro-camisa.css">
 </head>
 
 <body>
-
-  <header>
+<header>
     <a href="pagina-inicial.html">
-      <div class="logo">
-        <img src="image/logo outside.JPG" alt="">
-      </div>
+        <div class="logo">
+            <img src="image/logo outside.JPG" alt="">
+        </div>
     </a>
-   
+
     <nav>
-      <ul>
-        <li><a href="#">Novidade</a></li>
-        <li><a href="#">Masculino</a></li>
-        <li><a href="#">Feminino</a></li>
-        <li><a href="#">Acessórios</a></li>
-        <li><a href="#">Coleção Outside</a></li>
-      </ul>
+        <ul>
+            <li><a href="pagina-inicial.html">Home</a></li>
+            <li><a href="masculino.html">Masculino</a></li>
+            <li><a href="feminino.html">Feminino</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="colecao.html">Coleção Outside</a></li>
+        </ul>
     </nav>
 
-    <div class="carrinho">
-      <img src="image/carrin.png">
-    </div>
+    <a href="carrinho.html">
+        <div class="carrinho">
+            <img src="image/carrin.png">
+        </div>
+    </a>
 
-    <div class="cadastro">
-      <img src="image/user.png">
-    </div>
+    <a href="area-do-cliente.html">
+        <div class="cliente">
+            <img src="image/user.png">
+        </div>
+    </a>
 
+</header>
 
+  <main>
+    <div class="camisas">
+      <div class="conteiner-camisa">
+          <div id="camisa1"></div>
+         <div class="descricao-camisa">
+           <h4>Camisa "Eternal Blue"</h4>
+           <h5>R$150.00</h5>
+         </div>
+       </div>
 
-  </header>
-
-  <section class="section-filtro">
-    <div class="card">
-      <P class="Overflow">
-      <div class="filtro">
-        <img src="image/filter (2).png">
-      </div>
-      <center>
-        FILTRO
-        <hr>
-        <p>
-          <a href="filtro-camisa.html">Camisa</a>
-        <p>
-          Calça
-        <p>
-          Acessórios
-        <p>
-          tamanho
-        <p>
-          Cores
-        <p>
-          Gêneros
-      </center>
-      </P>
-    </div>
-        
-        <div class="conteiner-camisa">
-         <img src="image/camisa1.png">
-          <div class="descricao-camisa"
+       <div class="conteiner-camisa">
+         <div id="camisa2"></div>
+          <div class="descricao-camisa">
             <h4>Camisa "Eternal Blue"</h4>
             <h5>R$150.00</h5>
           </div>
         </div>
 
         <div class="conteiner-camisa">
-          <img src="image/camisa2.png">
-           <div class="descricao-camisa"
+          <div id="camisa3"></div>
+           <div class="descricao-camisa">
              <h4>Camisa "Eternal Blue"</h4>
              <h5>R$150.00</h5>
            </div>
-         </div>
+        </div>
+      </div>
+    </div>
 
-         <div class="conteiner-camisa">
-          <img src="image/camisa2.png">
-           <div class="descricao-camisa"
-             <h4>Camisa "Eternal Blue"</h4>
-             <h5>R$150.00</h5>
-           </div>
-         </div>
-  </section>   
-</main>
+        
+
+
+  </main>
 
   <footer>
     <p>&copy; 2024 Minha Loja Streetwear. Todos os direitos reservados.</p>

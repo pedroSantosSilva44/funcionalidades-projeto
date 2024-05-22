@@ -17,40 +17,36 @@
 </head>
 
 <body>
+<header>
+    <a href="pagina-inicial.html">
+        <div class="logo">
+            <img src="image/logo outside.JPG" alt="">
+        </div>
+    </a>
 
-    <body>
-        <header>
-          <div class="logo">
-            <a href="index.html">
-              <img src="image/logo outside.JPG" alt="">
-            </a>  
-          </div>
-          <!-- <div>
-            <h1>OUTSIDE BUBBLE</h1>
-          </div> -->
-          <nav>
-            <ul>
-              <li><a href="index.html">Novidade</a></li>
-              <li><a href="masculino.html">Masculino</a></li>
-              <li><a href="feminino.html">Feminino</a></li>
-              <li><a href="acessorios.html">Acessórios</a></li>
-              <li><a href="colecao.html">Coleção Outside</a></li>
-            </ul>
-          </nav>
-      
-          <div class="lupa">
-            <img src="image/search.png">
-          </div>
-      
-          <div class="carrinho">
+    <nav>
+        <ul>
+            <li><a href="pagina-inicial.html">Home</a></li>
+            <li><a href="masculino.html">Masculino</a></li>
+            <li><a href="feminino.html">Feminino</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="colecao.html">Coleção Outside</a></li>
+        </ul>
+    </nav>
+
+    <a href="carrinho.html">
+        <div class="carrinho">
             <img src="image/carrin.png">
-          </div>
-      
-          <div class="cadastro">
+        </div>
+    </a>
+
+    <a href="area-do-cliente.html">
+        <div class="cliente">
             <img src="image/user.png">
-          </div>
-      
-        </header>
+        </div>
+    </a>
+
+</header>
 
     <section class ="home">
         
@@ -63,18 +59,45 @@
 
             <h1>ÓCULOS   <br> "SMOKE STAR" </h1>
             <h3>R$85.00</h3>
-            <select>
-                <option>Tamanho:</option>
-                <option>P</option>
-                <option>M</option>
-                <option>G</option>
-                <option>GG</option>
-            </select> <br><br> <a href="#" class="btn">Compre Agora</a>
+            <select id="tamanho">
+                <option value="">Tamanho:</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+            </select> <br><br>
+            <a href="#" class="btn" id="compreAgoraBtn">Compre Agora</a>
 
-        </div><!--home-text-->
+        </div>
 
-    </section><!--home-->
+    </section>
 
+<script>
+    document.getElementById('compreAgoraBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const tamanho = document.getElementById('tamanho').value;
+        if (!tamanho) {
+            alert('Por favor, selecione um tamanho.');
+            return;
+        }
+
+        const produto = {
+            nome: 'ÓCULOS "SMOKE STAR"',
+            preco: 85.00,
+            tamanho: tamanho,
+            quantidade: 1,
+            imagem: 'image/acessorio4.png'
+        };
+
+        let carrinho = localStorage.getItem('carrinho');
+        carrinho = carrinho ? JSON.parse(carrinho) : [];
+
+        carrinho.push(produto);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        alert('Produto adicionado ao carrinho!');
+    });
+</script>
 
 </body>
 

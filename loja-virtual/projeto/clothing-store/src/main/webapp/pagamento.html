@@ -8,39 +8,36 @@
   </head>
   <body>
 
-    <header>
-      <a href="pagina-inicial.html">
-        <div class="logo">
-          <img src="image/logo outside.JPG" alt="">
-        </div>
-      </a>
+  <header>
+    <a href="pagina-inicial.html">
+      <div class="logo">
+        <img src="image/logo outside.JPG" alt="">
+      </div>
+    </a>
 
-     <nav>
-     </nav>
+    <nav>
+      <ul>
+        <li><a href="pagina-inicial.html">Home</a></li>
+        <li><a href="masculino.html">Masculino</a></li>
+        <li><a href="feminino.html">Feminino</a></li>
+        <li><a href="acessorios.html">Acessórios</a></li>
+        <li><a href="colecao.html">Coleção Outside</a></li>
+      </ul>
+    </nav>
 
-      <nav>
-        <ul>
-          <li><a href="#">Novidade</a></li>
-          <li><a href="#">Masculino</a></li>
-          <li><a href="#">Feminino</a></li>
-          <li><a href="#">Acessórios</a></li>
-          <li><a href="#">Coleção Outside</a></li>
-        </ul>
-      </nav>
-  
-        <a href="carrinho.html">
-        <div class="carrinho">
-          <img src="image/carrin.png"> 
-       </div>
-       </a>
+    <a href="carrinho.html">
+      <div class="carrinho">
+        <img src="image/carrin.png">
+      </div>
+    </a>
 
-       <a href="area do cliente.html">
-          <div class="cliente">
-            <img src="image/user.png">
-          </div>
-              </a>  
+    <a href="area-do-cliente.html">
+      <div class="cliente">
+        <img src="image/user.png">
+      </div>
+    </a>
 
-    </header>
+  </header>
 
     <div class="container">
       <h2>Checkout</h2>
@@ -52,17 +49,40 @@
         <label for="cartao">Número do Cartão:</label>
         <input type="text" id="cartao" name="cartao" required />
         <label for="validade">Data de Validade:</label>
-        <input
-          type="text"
-          id="validade"
-          name="validade"
-          placeholder="MM/AA"
-          required
-        />
+        <input type="text" id="validade" name="validade" placeholder="MM/AA" required/>
         <label for="cvv">CVV:</label>
         <input type="text" id="cvv" name="cvv" required />
         <button type="submit">Pagar</button>
       </form>
     </div>
+
+  <script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Obtenha os dados do formulário
+        const nome = document.getElementById('nome').value;
+        const endereco = document.getElementById('endereco').value;
+        const cartao = document.getElementById('cartao').value;
+        const validade = document.getElementById('validade').value;
+        const cvv = document.getElementById('cvv').value;
+
+        // Crie um objeto de pedido
+        const pedido = {
+            nome: nome,
+            endereco: endereco,
+            cartao: cartao,
+            validade: validade,
+            cvv: cvv
+        };
+
+        // Armazene o pedido no localStorage
+        localStorage.setItem('pedido', JSON.stringify(pedido));
+
+        // Redirecione para a página de confirmação
+        window.location.href = 'confirmacao.html';
+    });
+  </script>
+
   </body>
 </html>

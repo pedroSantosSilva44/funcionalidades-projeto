@@ -16,14 +16,9 @@ public class ListClothingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        List<Clothing> clothings = new ClothingDAO().findAllClothings();
-
-        req.setAttribute("clothings", clothings);
-
-        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
-
+        ClothingDAO roupas = new ClothingDAO();
+        List<Clothing> roupa =roupas.findAllClothings();
+        req.setAttribute("clothings", roupa);
+        req.getRequestDispatcher("/admin.jsp").forward(req, resp);
     }
-
 }
-
